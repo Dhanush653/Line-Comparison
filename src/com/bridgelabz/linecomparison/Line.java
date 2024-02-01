@@ -18,21 +18,11 @@ public class Line implements Comparable<Line> {
     @Override
     public int compareTo(Line otherLine) {
         // Compare lines based on their lengths
+
+        //current line
         Double length1 = this.calculateLength();
+        //other line which is passed as the parameter
         Double length2 = otherLine.calculateLength();
         return length1.compareTo(length2);
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-        Line otherLine = (Line) obj;
-        return Objects.equals(p1, otherLine.p1) && Objects.equals(p2, otherLine.p2);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(p1, p2);
     }
 }
