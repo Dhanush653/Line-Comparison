@@ -1,7 +1,5 @@
 package com.bridgelabz.linecomparison;
 
-import java.util.Objects;
-
 public class Line implements Comparable<Line> {
     Point p1;
     Point p2;
@@ -16,13 +14,16 @@ public class Line implements Comparable<Line> {
     }
 
     @Override
-    public int compareTo(Line otherLine) {
-        // Compare lines based on their lengths
-
+    public int compareTo(Line other) {
         //current line
         Double length1 = this.calculateLength();
         //other line which is passed as the parameter
-        Double length2 = otherLine.calculateLength();
+        Double length2 = other.calculateLength();
         return length1.compareTo(length2);
+
+    }
+
+    public boolean equals(Line other) {
+        return this == other;
     }
 }
